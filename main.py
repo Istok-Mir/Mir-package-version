@@ -1,5 +1,5 @@
 from __future__ import annotations
-from Mir import LanguageServer, ActivityIndicator, PackageStorage, unzip
+from Mir import LanguageServer, LoaderInStatusBar, PackageStorage, unzip
 import sublime
 
 
@@ -24,7 +24,7 @@ class PackageVersionServer(LanguageServer):
         })
 
     async def install(self):
-        with ActivityIndicator(sublime.active_window(), f'Installing {PackageVersionServer.name}'):
+        with LoaderInStatusBar(f'Installing {PackageVersionServer.name}'):
             fetch_url, archive_filename = self._archive_on_github()
             save_to = server_storage / archive_filename
             await server_storage.download(fetch_url, save_to)
