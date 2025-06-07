@@ -1,7 +1,5 @@
 from __future__ import annotations
-from Mir import LanguageServer
-from Mir.api import ActivityIndicator
-from Mir.package_storage import PackageStorage, unzip
+from Mir import LanguageServer, ActivityIndicator, PackageStorage, unzip
 import sublime
 
 
