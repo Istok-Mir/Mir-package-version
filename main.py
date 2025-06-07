@@ -4,7 +4,7 @@ import sublime
 
 
 GITHUB_ASSET_VERSION = 'v0.0.7'
-server_storage = PackageStorage(__package__, tag='0.0.1')
+server_storage = PackageStorage(tag='0.0.1')
 
 
 class PackageVersionServer(LanguageServer):
