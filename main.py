@@ -24,8 +24,9 @@ class PackageVersionServer(LanguageServer):
         # setup runtime and install dependencies
         await package_storage_setup()
 
-        await self.connect('stdio', {
-            'cmd': [server_path]
+        await self.initialize({
+            'communication_channel': 'stdio',
+            'command': [server_path]
         })
 
 
